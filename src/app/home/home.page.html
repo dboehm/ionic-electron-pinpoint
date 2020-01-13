@@ -1,14 +1,78 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-split-pane contentId="map-content">
+    <ion-menu contentId="map-content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>
+                    Saved Addresses
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item *ngIf="!addresses.length">
+                    <p>You have no saved addresses.
+                        Please select an address from the map!
+                    </p>
+                </ion-item>
+                <ion-item *ngFor="let address of addresses" button (click)="highlightedAddress=address">
+                    <ion-label>
+                        <p>{{address.addressLine1}}</p>
+                        <p *ngIf="address.addressLine2">{{address.addressLine2}}</p>
+                        <p>{{address.city}}, {{address.state}}, {{address.zipCode}}</p>
+                        <p>{{address.latitude}}, {{address.longitude}}</p>
+                        <p>{{address.addressId}}, {{address.placeId}}</p>
+                        <p>{{address.addressStatus}}</p>
+                    </ion-label>
+                    <ion-icon name="checkmark" slot="end" *ngIf="selectedAddress === address"></ion-icon>
+                    <ion-icon name="pin" slot="end" (click)="selectedAddress=address;
+                    highlightedAddress = null" *ngIf="highlightedAddress === address">
+                    </ion-icon>
+                    <ion-icon name="trash" slot="end" (click)="onDeleteClick(address)" *ngIf="highlightedAddress===address">
+                    </ion-icon>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+    <section class="ion-page" id="map-content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-buttons slot="start">
+                    <ion-menu-toggle>
+                        <ion-button>
+                            <ion-icon slot="icon-only" name="menu">
+                            </ion-icon>
+                        </ion-button>
+                    </ion-menu-toggle>
+                </ion-buttons>
+                <ion-title>Select Location</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <agm-map
+                    [latitude]="+selectedAddress.latitude"
+                    [longitude]="+selectedAddress.longitude"
+                    [zoom]="18"
+                    [clickableIcons]="true"
+                    [showDefaultInfoWindow]="false"
+                    [usePanning]="true"
+                    (mapClick)="onMapClick($event)">
+                <agm-marker *ngFor="let address of addresses"
+                            [latitude]="+address.latitude"
+                            [longitude]="+address.longitude"
+                            (markerClick)="selectedAddress=address">
+                    <agm-info-window
+                            [isOpen]="selectedAddress===address"
+                            [maxWidth]="300">
+                        <ion-label>
+                            <p>{{address.addressLine1}}</p>
+                            <p *ngIf="address.addressLine2">{{address.addressLine2}}</p>
+                            <p>{{address.city}}, {{address.state}}, {{address.zipCode}}</p>
+                        </ion-label>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
-</ion-content>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+        </ion-content>
+    </section>
+</ion-split-pane>
+
