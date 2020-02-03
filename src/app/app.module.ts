@@ -6,10 +6,13 @@ import {IonicModule, IonicRouteStrategy} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
 
+import {HttpClientModule} from '@angular/common/http';
+
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 
 import {AgmCoreModule, MapsAPILoader} from '@agm/core';
+import {NgxElectronModule} from 'ngx-electron';
 
 import {IonicStorageModule} from '@ionic/storage';
 
@@ -23,6 +26,7 @@ import {IonicStorageModule} from '@ionic/storage';
             libraries: ['places', 'drawing', 'geometry']
         }),
         IonicStorageModule.forRoot({name: 'pinpoint'}),
+        NgxElectronModule, HttpClientModule,
         BrowserModule, IonicModule.forRoot(), AppRoutingModule],
     providers: [
         StatusBar,

@@ -27,7 +27,8 @@
                     <ion-icon name="pin" slot="end" (click)="selectedAddress=address;
                     highlightedAddress = null" *ngIf="highlightedAddress === address">
                     </ion-icon>
-                    <ion-icon name="trash" slot="end" (click)="onDeleteClick(address)" *ngIf="highlightedAddress===address">
+                    <ion-icon name="trash" slot="end" (click)="onDeleteClick(address)"
+                              *ngIf="highlightedAddress===address">
                     </ion-icon>
                 </ion-item>
             </ion-list>

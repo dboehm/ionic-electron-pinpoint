@@ -1,0 +1,8 @@
+{
+  "appId": "de.jamsintown.pinpoint",
+  "appName": "pinpoint",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

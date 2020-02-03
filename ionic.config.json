@@ -1,5 +1,7 @@
 {
   "name": "pinpoint",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

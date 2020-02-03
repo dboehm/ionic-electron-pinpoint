@@ -16,8 +16,6 @@ export class HomePage implements OnInit {
         private  alertController: AlertController,
         private mapsService: MapsService,
         private storage: StorageService) {
-        this.addresses.push(this.selectedAddress);
-        this.addresses.push(this.secondAddress);
     }
 
     selectedAddress: Address = {
@@ -28,20 +26,13 @@ export class HomePage implements OnInit {
         latitude: '51.0455976',
         longitude: '13.8104503'
     };
-    secondAddress: Address = {
-        addressLine1: 'Merkel-Str. 28',
-        city: 'Göttingen',
-        state: 'NDS',
-        zipCode: '37085',
-        latitude: '51.5305767',
-        longitude: '9.9532595'
-    };
 
     addresses: Address[] = [];
     highlightedAddress: Address;
 
     async ngOnInit() {
         this.addresses = await this.storage.getAddresses();
+        // this.addresses.push(this.selectedAddress);
     }
 
     public async onMapClick(event: MouseEvent) {
