@@ -1,23 +1,74 @@
 {
-  "name": "jamsintown",
-  "productName": "JamsInTown",
-  "version": "1.0.0",
+  "name": "pinpoint",
+  "productName": "Pinpoint",
+  "version": "1.0.1",
   "description": "An Amazing Capacitor App",
+  "author": "Detlef Böhm",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "electron:start": "electron ./"
+    "electron:start": "electron ./",
+    "postinstall": "electron-builder install-appdeps",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "release": "electron-builder"
   },
   "dependencies": {
     "@capacitor/electron": "^1.4.0",
     "electron-is-dev": "^1.1.0"
   },
   "devDependencies": {
-    "electron": "^7.0.0"
+    "electron": "^7.0.0",
+    "electron-builder": "^22.3.2"
   },
   "keywords": [
     "capacitor",
     "electron"
   ],
-  "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "build": {
+    "appId": "de.jamsintown.pinpoint",
+    "files": [
+      "!electron-builder.env",
+      "!.env"
+    ],
+    "linux": {
+      "category": "Network",
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.business",
+      "icon": "images/icon.png",
+      "identity": null
+    },
+    "win": {
+      "icon": "images/icon.ico",
+      "target": {
+        "target": "nsis",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "menuCategory": "Jams in Town"
+    },
+    "publish": {
+      "provider": "github",
+      "repo": "pinpoint-releases",
+      "owner": "dboehm"
+    }
+  }
 }

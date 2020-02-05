@@ -14,8 +14,8 @@ export class DispatcherService {
     public async saveEndpointAsync(endpoint: Endpoint) {
         const saved = endpoint.id
             ? await this.updateAsync(endpoint)
-            : await this.saveEndpointAsync(endpoint);
-        return this.provisionAsync(endpoint);
+            : await this.addAsync(endpoint);
+        return this.provisionAsync(saved);
     }
 
     private async addAsync(endpoint: Endpoint) {

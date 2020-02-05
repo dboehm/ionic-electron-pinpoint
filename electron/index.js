@@ -136,7 +136,7 @@ function buildAddressMenu(addressList) {
         disabled: addresses.length,
         submenu: addresses.map((addr, i) => {
             return {
-                label: `${addr.addressLine1}, ${addr.city}, ${addr.state}`,
+                label: `${i+1}. ${addr.addressLine1}, ${addr.city}, ${addr.state}`,
                 click: () => setAddress(addr.addressId)
             }
         })

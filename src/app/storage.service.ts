@@ -14,7 +14,8 @@ export class StorageService {
     constructor(private electronService: ElectronService,
                 private storage: Storage,
                 private dispatcherService: DispatcherService
-    ) {}
+    ) {
+    }
 
     async provisionAddressAsync(address: Address): Promise<Endpoint> {
         if (!address.addressId) {
@@ -25,11 +26,6 @@ export class StorageService {
         return this.dispatcherService.saveEndpointAsync(endpoint);
 
 
-    }
-
-    async getEndpoint(): Promise<Endpoint> {
-        const endpoint = await this.storage.get('endpoint');
-        return endpoint || {};
     }
 
     async saveAddress(address: Address): Promise<Address> {
@@ -64,9 +60,18 @@ export class StorageService {
     }
 
     async updateAddressMenu(addressList: Address[] = null) {
-         if (this.electronService.isElectronApp) {
+        if (this.electronService.isElectronApp) {
             const addresses = addressList || await this.getAddresses();
             this.electronService.ipcRenderer.send('addr', addresses);
-         }
+        }
+    }
+
+    async setEndpoint(endpoint: Endpoint): Promise<void> {
+        this.storage.set('endpoint', endpoint);
+    }
+
+    async getEndpoint(): Promise<Endpoint> {
+        const endpoint = await this.storage.get('endpoint');
+        return endpoint || {};
     }
 }

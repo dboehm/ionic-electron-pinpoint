@@ -24,7 +24,7 @@
                         <p>{{address.addressStatus}}</p>
                     </ion-label>
                     <ion-icon name="checkmark" slot="end" *ngIf="selectedAddress === address"></ion-icon>
-                    <ion-icon name="pin" slot="end" (click)="selectedAddress=address;
+                    <ion-icon name="pin" slot="end" (click)="provisionAsync(address);
                     highlightedAddress = null" *ngIf="highlightedAddress === address">
                     </ion-icon>
                     <ion-icon name="trash" slot="end" (click)="onDeleteClick(address)"
@@ -33,6 +33,29 @@
                 </ion-item>
             </ion-list>
         </ion-content>
+        <ion-footer>
+            <ion-toolbar>
+                <ion-title>
+                    Your Information
+                </ion-title>
+                <form [formGroup]="endpointForm"
+                      (ngSubmit)="saveEndpoint()">
+                    <ion-item>
+                        <ion-label position="floating">Name</ion-label>
+                        <ion-input formControlName="name" #endpointName></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Phone</ion-label>
+                        <ion-input formControlName="elin"></ion-input>
+                    </ion-item>
+                    <ion-button expand="block" type="submit"
+                                color="tertiary"
+                                [disabled]="!endpointForm.valid || !endpointForm.dirty">
+                        Save
+                    </ion-button>
+                </form>
+            </ion-toolbar>
+        </ion-footer>
     </ion-menu>
     <section class="ion-page" id="map-content">
         <ion-header>
@@ -60,7 +83,7 @@
                 <agm-marker *ngFor="let address of addresses"
                             [latitude]="+address.latitude"
                             [longitude]="+address.longitude"
-                            (markerClick)="selectedAddress=address">
+                            (markerClick)="provisionAsync(address)">
                     <agm-info-window
                             [isOpen]="selectedAddress===address"
                             [maxWidth]="300">
