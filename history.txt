@@ -1,0 +1,1000 @@
+    3  tmux
+    4  tmux a
+    5  cd git.kafka/kafka_2.12-2.3.0/
+    6  cd bin/
+    7  ll
+    8  ./kafka-console-producer.sh 
+    9  ./kafka-console-producer.sh --broker-list localhost:9093 --topic orders 
+   10  ./kafka-console-producer.sh --broker-list localhost:9093 --topic orders < ../../designing-event-driven-applications-apache-kafka-ecosystem/07/demos/orders.json 
+   11  ./kafka-console-producer.sh --broker-list localhost:9093 --topic orders < ../../designing-event-driven-applications-apache-kafka-ecosystem/07/
+   12  ./kafka-console-producer.sh --broker-list localhost:9093 --topic orders < ../../designing-event-driven-applications-apache-kafka-ecosystem/07/demos/orders_noscheme_oneline.json 
+   13  ./kafka-console-producer.sh --broker-list localhost:9093 --topic or"orders < ../../designing-event-driven-applications-apache-kafka-ecosystem/07/demos/orders_noscheme_oneline.json 
+   14  ./kafka-console-producer.sh --broker-list localhost:9093 --topic or"orders < ../../designing-event-driven-applications-apache-kafka-ecosystem/07/demos/orders_noscheme_oneline.json 
+   15  ./kafka-console-producer.sh --broker-list localhost:9093,localhost:9094 --topic orders < ../../designing-event-driven-applications-apache-kafka-ecosystem/07/demos/orders_noscheme_oneline.json 
+   16  ./kafka-console-producer.sh --broker-list localhost:9093,localhost:9094 --topic orders < ../../designing-event-driven-applications-apache-kafka-ecosystem/07/demos/orders_noscheme_oneline.json
+   17  cd ..
+   18  cd designing-event-driven-applications-apache-kafka-ecosystem/08/demos/
+   19  ll
+   20  curl -X POST   http://localhost:8082/topics/designs   -H 'Content-Type: application/vnd.kafka.json.v2+json' -d '{
+   21    "records": [
+   22      
+   23        "key": "design1",
+   24        "value": {
+   25  "color": "blue", 
+   26  "image ":"car"
+   27  }
+   28      },
+   29      
+   30        "key": "design2",
+   31        "value": {
+   32  "color": "red", 
+   33  "image ":"suitcase"
+   34      }
+   35  }' | json_pp
+   36  curl -X POST   http://localhost:8082/topics/designs   -H 'Content-Type: application/vnd.kafka.json.v2+json' -d '{
+   37    "records": [
+   38      
+   39        "key": "design1",
+   40        "value": {
+   41  "color": "blue", 
+   42  "image ":"car"
+   43  }
+   44      },
+   45      
+   46        "key": "design2",
+   47        "value": {
+   48  "color": "red", 
+   49  "image ":"suitcase"
+   50      }
+   51  }' | json_pp
+   52  curl -X POST   http://localhost:8082/topics/designs   -H 'Content-Type: application/vnd.kafka.json.v2+json' -d '{
+   53    "records": [
+   54       "key": "design1",
+   55        "value": {
+   56  "color": "blue", 
+   57  "image ":"car"
+   58  }
+   59      },
+   60      
+   61        "key": "design2",
+   62        "value": {
+   63  "color": "red", 
+   64  "image ":"suitcase"
+   65      }
+   66  }' | json_pp
+   67  curl -X POST   http://localhost:8082/topics/designs   -H 'Content-Type: application/vnd.kafka.json.v2+json' -d '{
+   68    "records": [
+   69       "key": "design1",
+   70        "value": {
+   71  "color": "blue", 
+   72  "image ":"car"
+   73  }
+   74      },
+   75      
+   76        "key": "design2",
+   77        "value": {
+   78  "color": "red", 
+   79  "image ":"suitcase"
+   80      }
+   81  }' | json_pp
+   82  curl -X POST   http://localhost:8082/topics/designs   -H 'Content-Type: application/vnd.kafka.json.v2+json' -d '{
+   83    "records": [
+   84       "key": "design1",
+   85        "value": {
+   86  "color": "blue", 
+   87  "image ":"car"
+   88  }
+   89      },
+   90      
+   91        "key": "design2",
+   92        "value": {
+   93  "color": "red", 
+   94  "image ":"suitcase"
+   95      }
+   96  }'
+   97  curl -X POST   http://localhost:8082/topics/designs   -H 'Content-Type: application/vnd.kafka.json.v2+json' -d '{
+   98    "records": [
+   99       "key": "design1",
+  100        "value": {
+  101  "color": "blue", 
+  102  "image ":"car"
+  103  }
+  104      },
+  105      
+  106        "key": "design2",
+  107        "value": {
+  108  "color": "red", 
+  109  "image ":"suitcase"
+  110      }
+  111  }'
+  112  curl -X POST   http://localhost:8082/topics/designs   -H 'Content-Type: application/vnd.kafka.json.v2+json' -d '{
+  113    "records": [
+  114       "key": "design1",
+  115        "value": {
+  116  "color": "blue", 
+  117  "image ":"car"
+  118  }
+  119      },
+  120      
+  121        "key": "design2",
+  122        "value": {
+  123  "color": "red", 
+  124  "image ":"suitcase"
+  125      }
+  126  }' | json_pp
+  127  cd git.kafka/
+  128  ll
+  129  cd confluent-5.3.1/
+  130  ll
+  131  less README 
+  132  ll
+  133  cd bin/
+  134  ll
+  135  ./control-center-start 
+  136  ll
+  137  cd ..
+  138  ll
+  139  cd bin/
+  140  ll
+  141  confluent local starr
+  142  confluent local start
+  143  cd ..
+  144  ll
+  145  cd ..
+  146  mkdir confluent-cli-5.3.1
+  147  cd confluent-cli-5.3.1/
+  148  curl -L https://cnfl.io/cli | sh -s -- -b ./bin
+  149  ll
+  150  cd ..
+  151  ll
+  152  cd confluent-cli-5.3.1/
+  153  ll
+  154  cd bin/
+  155  ll
+  156  ./confluent start
+  157  ./confluent local start
+  158  pwd
+  159  vim ~/.bashrc
+  160  ./confluent local start
+  161  vim ~/.bashrc
+  162  source ~/.bashrc
+  163  ./confluent local start
+  164  sudo update-alternatives --config java
+  165  sudo update-alternatives --config javac
+  166  ./confluent local start
+  167  javac -versin
+  168  javac -version
+  169  source ~/.bashrc
+  170  ./confluent local start
+  171  vim ~/.bashrc
+  172  export $JAVA_HOME 
+  173  echo $JAVA_HOME 
+  174  export JAVA_HOME 
+  175  echo $JAVA_HOME 
+  176  export JAVA_HOME= 
+  177  echo $JAVA_HOME 
+  178  ./confluent local start
+  179  confluent status
+  180  confluent stop
+  181  confluent local status
+  182  confluent local stop
+  183  ./confluent local start
+  184  confluent local status
+  185  apt-get install kafkacat
+  186  sudo apt-get install kafkacat
+  187  kafkacat -b localhost:9093 –t amazingTopic redundantTopic
+  188  kafkacat -b localhost:9093 –t orders
+  189  kafkacat -b localhost:9093 
+  190  lsof -i :9093
+  191  ksql http://localhost:8088
+  192  ~/git.kafka/confluent-5.3.1/bin/ksql
+  193  ~/git.kafka/kafka-rest$ bin/kafka-rest-start config/kafka-rest.properties
+  194   ~/git.kafka/kafka_2.12-2.3.0/config/kafka-rest.properties
+  195  ~/git.kafka/confluent-5.3.1/bin/kafka-rest-start ~/git.kafka/confluent-5.3.1/etc/kafka-rest/kafka-rest.properties 
+  196  ~/git.kafka/confluent-5.3.1/bin/ksql-server-start ~/git.kafka/confluent-5.3.1/etc/ksql/ksql-server.properties
+  197  ~/git.kafka/schema-registry/bin/schema-registry-start ~/git.kafka/schema-registry/config/schema-registry.properties
+  198  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/server-2.properties
+  199  cd ~/git.kafka/confluent-5.3.1/
+  200  ll
+  201  bin/control-center-start 
+  202  bin/control-center-start etc/confluent-control-center/control-center-dev.properties 
+  203  bin/control-center-stop etc/confluent-control-center/control-center-dev.properties 
+  204  bin/control-center-stop
+  205  bin/control-center-stop etc/confluent-control-center/control-center-dev.properties 
+  206  bin/control-center-start etc/confluent-control-center/control-center-dev.properties 
+  207  ~/git.kafka/kafka_2.12-2.3.0/bin/zookeeper-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/zookeeper.properties
+  208  ll
+  209  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/server-1.properties
+  210  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --zookeeper localhost:2191 --topic my_topic --from-beginning
+  211  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic my_topic --from-beginning
+  212  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:2181 --topic my_topic --from-beginning
+  213  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic my_topic --from-beginning
+  214  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9094 --topic my_topic --from-beginning
+  215  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:2181 --topic my_topic --from-beginning
+  216  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic my_topic --from-beginning
+  217  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9094 --topic my_topic --from-beginning
+  218  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:2181 --topic my_topic --from-beginning
+  219  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9094 --topic my_topic --from-beginning
+  220  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9094 --topic replicated_topic --from-beginning
+  221  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9094 --topic my_topic --from-beginning
+  222  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic my_topic --from-beginning
+  223  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic my_topic 
+  224  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic weather
+  225  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh 
+  226  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic weather
+  227  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic weather --from-beginning --property print.kex=true
+  228  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9093 --topic weather --from-beginning --property print.key=true
+  229  git.kafka/kafka_2.12-2.3.0/bin/kafka-producer-perf-test.sh  --topic my_topic --num-records 50 --record-size 1 throughput 10 producer-props bootstrap.servers=localhost:9093 key.serializer=org.apache.kafka.common,serialization.StringSerializer value.serializer=org.apache.kafka.common,serialization.StringSerializer 
+  230  git.kafka/kafka_2.12-2.3.0/bin/kafka-producer-perf-test.sh  --topic my_topic --num-records 50 --record-size 1 --throughput 10 --producer-props bootstrap.servers=localhost:9093 key.serializer=org.apache.kafka.common,serialization.StringSerializer value.serializer=org.apache.kafka.common,serialization.StringSerializer
+  231  git.kafka/kafka_2.12-2.3.0/bin/kafka-producer-perf-test.sh  --topic my_topic --num-records 50 --record-size 1 --throughput 10 --producer-props bootstrap.servers=localhost:9093 key.serializer=org.apache.kafka.common.serialization.StringSerializer value.serializer=org.apache.kafka.common,serialization.StringSerializer
+  232  git.kafka/kafka_2.12-2.3.0/bin/kafka-producer-perf-test.sh  --topic my_other_topic --num-records 50 --record-size 1 --throughput 10 --producer-props bootstrap.servers=localhost:9093 key.serializer=org.apache.kafka.common,serialization.StringSerializer value.serializer=org.apache.kafka.common,serialization.StringSerializer
+  233  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh 
+  234  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --create --topic my_topic --zookeeper localhost:2181 --replication-factor 1 --partitions 1
+  235  ll /tmp/kafka-logs-2
+  236  ll /tmp/kafka-logs-2/my_topic-0/
+  237  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --list --zookeeper localhost:2181 
+  238  git.kafka/kafka_2.12-2.3.0/bin/kafka-console-producer.sh --broker-list localhost:9093, localhost:9094 --topic my_topic 
+  239  git.kafka/kafka_2.12-2.3.0/bin/kafka-console-producer.sh --broker-list localhost:9093 --topic my_topic 
+  240  git.kafka/kafka_2.12-2.3.0/bin/kafka-console-producer.sh --broker-list localhost:2181 --topic my_topic 
+  241  git.kafka/kafka_2.12-2.3.0/bin/kafka-console-producer.sh --broker-list localhost:9093 --topic my_topic 
+  242  git.kafka/kafka_2.12-2.3.0/bin/kafka-console-producer.sh --broker-list localhost:9093 --topic replicated_topic 
+  243  git.kafka/kafka_2.12-2.3.0/bin/kafka-producer-perf-test.sh  --topic my_other_topic --num-records 50 --record-size 1 throughput 10 producer-props bootststrap.servers=localhost:9093 key.serializer=org.apache.kafka.common,serialization.StringSerializer value.serializer=org.apache.kafka.common,serialization.StringSerializer  
+  244  git.kafka/kafka_2.12-2.3.0/bin/kafka-producer-perf-test.sh  --topic my_other_topic --num-records 50 --record-size 1 --throughput 10 producer-props bootststrap.servers=localhost:9093 key.serializer=org.apache.kafka.common,serialization.StringSerializer value.serializer=org.apache.kafka.common,serialization.StringSerializer  
+  245  git.kafka/kafka_2.12-2.3.0/bin/kafka-producer-perf-test.sh  --topic my_other_topic --num-records 50 --record-size 1 --throughput 10 --producer-props bootststrap.servers=localhost:9093 key.serializer=org.apache.kafka.common,serialization.StringSerializer value.serializer=org.apache.kafka.common,serialization.StringSerializer  
+  246  git.kafka/kafka_2.12-2.3.0/bin/kafka-producer-perf-test.sh  --topic my_other_topic --num-records 50 --record-size 1 --throughput 10 --producer-props bootstrap.servers=localhost:9093 key.serializer=org.apache.kafka.common,serialization.StringSerializer value.serializer=org.apache.kafka.common,serialization.StringSerializer  
+  247  git.kafka/kafka_2.12-2.3.0/bin/kafka-console-producer.sh --broker-list localhost:9093 --topic replicated_topic 
+  248  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --create --topic my_topic --zookeeper localhost:2181 --replication-factor 1 --partitions 1
+  249  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --create --topic my_partitioned_topic --zookeeper localhost:2181 --replication-factor 2  --partitions 2
+  250  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_partitioned_topic --zookeeper localhost:2181
+  251  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --create --topic replicated_topic --zookeeper localhost:2181 --replication-factor 3 --partitions 1
+  252  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic replicated_topic --zookeeper localhost:2181
+  253  tree /tmp/kafka-logs-1/
+  254  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic replicated_topic --zookeeper localhost:2181
+  255  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_topic --zookeeper localhost:2181
+  256  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --delete 
+  257  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --delete --topic my_topic --zookeeper localhost:2181
+  258  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_topic --zookeeper localhost:2181
+  259  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --create --topic my_topic --zookeeper localhost:2181 --replication-factor 3 --partitions 1
+  260  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_topic --zookeeper localhost:2181
+  261  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --delete --topic my_topic --zookeeper localhost:2181
+  262  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --create --topic my_topic --zookeeper localhost:2181 --replication-factor 3 --partitions 3
+  263  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_topic --zookeeper localhost:2181
+  264  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --create --topic ic --zookeeper localhost:2181 --replication-factor 3 --partitions 3
+  265  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_other_topic --zookeeper localhost:2181
+  266  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_topic --zookeeper localhost:2181
+  267  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --alter --topic my_topic --zookeeper localhost:2181 --replication-factor 3 --partitions 4
+  268  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --alter --topic my_topic --zookeeper localhost:2181  --partitions 4
+  269  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_topic --zookeeper localhost:2181
+  270  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic __consumer_offsets --zookeeper localhost:2181
+  271  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_big_topic --zookeeper localhost:2181
+  272  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --alter --topic my_big_topic --zookeeper localhost:2181 --partitions 3
+  273  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_big_topic --zookeeper localhost:2181
+  274  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --alter --topic my_big_topic --zookeeper localhost:2181 --partitions 4
+  275  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_big_topic --zookeeper localhost:2181
+  276  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --alter --topic my_big_topic --zookeeper localhost:2181 --partitions 5
+  277  git.kafka/kafka_2.12-2.3.0/bin/kafka-topics.sh --describe --topic my_big_topic --zookeeper localhost:2181
+  278  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/server-3.properties
+  279  mv ~/git.kafka/kafka_2.12-2.3.0/config/server-3.poperties ~/git.kafka/kafka_2.12-2.3.0/config/server-3.properties 
+  280  vim ~/git.kafka/kafka_2.12-2.3.0/config/server-3.properties 
+  281  vim ~/git.kafka/kafka_2.12-2.3.0/config/server-1.properties 
+  282  vim ~/git.kafka/kafka_2.12-2.3.0/config/server-2.properties 
+  283  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/server-3.properties
+  284  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/server-2.properties
+  285  telnet localhost 2181
+  286  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/server-1.properties
+  287  cp ~/git.kafka/kafka_2.12-2.3.0/config/server-1.properties ~/git.kafka/kafka_2.12-2.3.0/config/server-3.poperties
+  288  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/server-1.properties
+  289  git.kafka/kafka_2.12-2.3.0/bin/zookeeper-server-start.sh 
+  290  git.kafka/kafka_2.12-2.3.0/bin/zookeeper-server-start.sh git.kafka/kafka_2.12-2.3.0/config/zookeeper.properties 
+  291  vim  git.kafka/kafka_2.12-2.3.0/config/zookeeper.properties 
+  292  git.kafka/kafka_2.12-2.3.0/bin/zookeeper-server-start.sh git.kafka/kafka_2.12-2.3.0/config/zookeeper.properties 
+  293  cd ..
+  294  cd kafka_2.12-2.3.0/bin/
+  295  ll
+  296  ./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic weather 
+  297  ./kafka-topics.sh --list --zookeeper localhost:2181 
+  298  cd /tmp/zookeeper/version-2/
+  299  ll
+  300  cd ..cd
+  301  cd -
+  302  ll
+  303  telnet localhost:2181
+  304  telnet localhost 2181
+  305  cd ..
+  306  cd apache-kafka-getting-started/
+  307  bi
+  308  ~/git.kafka/kafka_2.12-2.3.0/bin/kafka-server-start.sh ~/git.kafka/kafka_2.12-2.3.0/config/server-1.properties 
+  309  cd git.kafka/apache-zookeeper-3.5.6-bin/
+  310  ll
+  311  ./bin/zkServer.sh start-foreground
+  312  sudo /etc/init.d/tomcat8 stop
+  313  ./bin/zkServer.sh start-foreground
+  314  cd /tmp/zookeeper/version-2/
+  315  ll
+  316  cd ..
+  317  ll
+  318  cd ..
+  319  ll
+  320  rm -rf zookeeper/
+  321  cd -
+  322  cd git.kafka/apache-zookeeper-3.5.6-bin/
+  323  cd ~/git.kafka/apache-zookeeper-3.5.6-bin/
+  324  ./bin/zkServer.sh start-foreground
+  325  cd ..
+  326  cd kafka-build-deploy-monitor-real-world-application/
+  327  ll
+  328  cd 02/
+  329  l
+  330  ll
+  331  cd demos/
+  332  ll
+  333  cd 
+  334  cd -
+  335  ll
+  336  cd demo/
+  337  ll
+  338  cd weather-analyzer-producer-only/
+  339  ll
+  340  cd weather-analyzer/
+  341  ll
+  342  sbt
+  343  sbt assembly
+  344  ll
+  345  ll target/
+  346  ll
+  347  sbt assembly
+  348  scala /home/dboehm/git.kafka/kafka-build-deploy-monitor-real-world-application/02/demos/demo/weather-analyzer-producer-only/weather-analyzer/producers/target/scala-2.12/producers-0.1.jar
+  349  scala -classpath /home/dboehm/git.kafka/kafka-build-deploy-monitor-real-world-application/02/demos/demo/weather-analyzer-producer-only/weather-analyzer/producers/target/scala-2.12/producers-0.1.jar weather.analyzer.producers.ReproducibleWeatherProducer
+  350  ll
+  351  scala -classpath /home/dboehm/git.kafka/kafka-build-deploy-monitor-real-world-application/02/demos/demo/weather-analyzer-producer-only/weather-analyzer/producers/target/scala-2.12/producers-0.1.jar weather.analyzer.producers.ReproducibleWeatherProducer
+  352  sbt assembly
+  353  cd ..
+  354  ll
+  355  cd weather-analyzer-consumer-added/
+  356  ll
+  357  cd weather-analyzer/
+  358  ll
+  359  sbt assembly
+  360  scala -classpath /home/dboehm/git.kafka/kafka-build-deploy-monitor-real-world-application/02/demos/demo/weather-analyzer-consumer-added/weather-analyzer/consumers/target/scala-2.12/consumers-0.1.jar weather.analyzer.consumers.WeatherAnalyzer
+  361  java -version
+  362  scala -version
+  363  scala
+  364  java -version
+  365  echo $JAVA_HOME 
+  366  export JAVA_HOME="" 
+  367  scala
+  368  mkdir git.microservices
+  369  cd git.microservices/
+  370  git clone https://github.com/ewolff/SCS-ESI.git
+  371  ll
+  372  cd SCS-ESI/
+  373  ll
+  374  less README.md 
+  375  cd scs-demo-esi-common/
+  376  ll
+  377  cd ..
+  378  ll
+  379  cd scs-demo-esi-order/
+  380  ll
+  381  ./mvnw clean package
+  382  ll
+  383  cd ..
+  384  ll
+  385  cd docker/
+  386  ll
+  387  docker-compose build .
+  388  docker-compose build
+  389  ll
+  390  docker images
+  391  docker images | grep scsesi
+  392  docker PS | grep scsesi
+  393  docker ps | grep scsesi
+  394  docker images | grep scsesi
+  395  docker-compose up -d
+  396  sudo tomcat stop
+  397  sudo /etc/init.d/tomcat stop
+  398  sudo /etc/init.d/tomcat8 stop
+  399  docker-compose up -d
+  400  docker ps
+  401  ll
+  402  cd varnish/
+  403  ll
+  404  cd ..
+  405  ll
+  406  cd ..
+  407  ll
+  408  cd scs-demo-esi-common/
+  409  ll
+  410  cd src/github.com/ewolff/common/
+  411  ll
+  412  less common.go 
+  413  ll
+  414  cd ..
+  415  l
+  416  cd ..
+  417  ll
+  418  cd ,,
+  419  ll
+  420  cd ..
+  421  ll
+  422  cd bootstrap-3.3.7-dist/
+  423  ll
+  424  cd ..
+  425  ll
+  426  cd ..
+  427  ll
+  428  cd docker/
+  429  ll
+  430  vim docker-compose.yml 
+  431  less .env 
+  432  cd 
+  433  l
+  434  ll
+  435  less scs-esi.yaml 
+  436  ll
+  437  cd varnish/
+  438  ll
+  439  vim default.vcl 
+  440  ll
+  441  less default.vcl 
+  442  less Dockerfile 
+  443  cd ..
+  444  ll
+  445  cd ..
+  446  ll
+  447  cd scs-demo-esi-v
+  448  cd scs-demo-esi-common/src/github.com/ewolff/common/
+  449  ll
+  450  less common.go 
+  451  cd ..
+  452  cd scs-demo-esi-order/src/main/java/com/ewolff/microservice/order/logic/
+  453  ll
+  454  cd ..
+  455  ll
+  456  less OrderApp.java 
+  457  ll
+  458  less OrderApp.java 
+  459  ll
+  460  cd ..
+  461  ll
+  462  cd ..
+  463  ll
+  464  cd ..
+  465  ll
+  466  cd ewolff/microservice/order
+  467  ll
+  468  cd logic/
+  469  ll
+  470  vim Order.java 
+  471  sudo /etc/init.d/tomcat8 stop
+  472  export $JAVA_HOME 
+  473  echo $JAVA_HOME 
+  474  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/ 
+  475  ll
+  476  tree 
+  477  less mvnw.cmd 
+  478  ll
+  479  vim pom.xml 
+  480  ll
+  481  vim src/test/java/com/example/guestbook/GuestbookApplicationTests.java 
+  482  mvn test
+  483  curl http://localhost:8081/guestbookMessages
+  484  curl -XPOST -H "content-type: application/json"   -d '{"name": "Ray", "message": "Hello"}'   http://localhost:8081/guestbookMessages
+  485  curl http://localhost:8081/guestbookMessages
+  486  curl -s http://localhost:8081/guestbookMessages   | jq -r '._embedded.guestbookMessages[] | {name: .name, message: .message}'
+  487  jq
+  488  curl -s http://localhost:8081/guestbookMessages   | jq '._embedded.guestbookMessages[] | {name: .name, message: .message}'
+  489  curl -s http://localhost:8081/guestbookMessages   | jq -r '._embedded.guestbookMessages[] | {name: .name, message: .message}'
+  490  curl 
+  491  curl  --help
+  492  curl http://localhost:8081/guestbookMessages
+  493  curl -s http://localhost:8081/guestbookMessages
+  494  curl -http://localhost:8081/guestbookMessages
+  495  curl -s http://localhost:8081/guestbookMessages | jq -r '._embedded.guestbookMessages[] '
+  496  curl -s http://localhost:8081/guestbookMessages   | jq -r '._embedded.guestbookMessages[] | {name: .name, message: .message}'
+  497  cd ..
+  498  cp -a ~/spring-cloud-gcp-guestbook/1-bootstrap/guestbook-frontend   ~/guestbook-frontend
+  499  cp -a spring-cloud-gcp-guestbook/1-bootstrap/guestbook-frontend   guestbook-frontend
+  500  ll
+  501  cd guestbook-frontend/
+  502  ll
+  503  vim pom.xml 
+  504  vim src/main/resources/application.properties 
+  505  vim src/main/resources/templates/index.html 
+  506  ll
+  507  vim src/main/java/com/example/frontend/FrontendApplication.java 
+  508  vim src/main/java/com/example/frontend/FrontendController.java 
+  509  ll
+  510  vim src/main/java/com/example/frontend/GuestbookMessagesClient.java 
+  511  ll
+  512  vim src/main/java/com/example/frontend/ServletInitializer.java 
+  513  cd git.microservices/
+  514  ll
+  515  cd building-scalable-java-microservices-spring-boot-spring-cloud/
+  516  ll
+  517  cd 02/
+  518  ll
+  519  cd ..
+  520  git clone git clone https://github.com/saturnism/spring-cloud-gcp-guestbook.git
+  521  git clone https://github.com/saturnism/spring-cloud-gcp-guestbook.git
+  522  cd spring-cloud-gcp-guestbook/
+  523  ll
+  524  cp -a ~/spring-cloud-gcp-guestbook/1-bootstrap/guestbook-service   ~/guestbook-service
+  525  cd ..
+  526  cp -a ~/spring-cloud-gcp-guestbook/1-bootstrap/guestbook-service   ~/guestbook-service
+  527  ll
+  528  cd spring-cloud-gcp-guestbook/
+  529  ll
+  530  cp -a ~/spring-cloud-gcp-guestbook/1-bootstrap/guestbook-service   ~/guestbook-service
+  531  cp -a /spring-cloud-gcp-guestbook/1-bootstrap/guestbook-service   ~/guestbook-service
+  532  cp -a /spring-cloud-gcp-guestbook/1-bootstrap/guestbook-service   /guestbook-service
+  533  cp -a ./spring-cloud-gcp-guestbook/1-bootstrap/guestbook-service  . /guestbook-service
+  534  cp -a ./spring-cloud-gcp-guestbook/1-bootstrap/guestbook-service  ./guestbook-service
+  535  cp -a 1-bootstrap/guestbook-servi  ../guestbook-service
+  536  cp -a 1-bootstrap/guestbook-service/  ../guestbook-service
+  537  cd ..
+  538  ll
+  539  cd guestbook-service/
+  540  ll
+  541  mvn install
+  542  sudo /etc/init.d/tomcat8 stop
+  543  mvn install
+  544  ll
+  545  ./mvnw -q spring-boot:run -Dserver.port=8081
+  546  ./mvnw -e -q spring-boot:run -Dserver.port=8081
+  547  ./mvnw -X -q spring-boot:run -Dserver.port=8081
+  548  java -version
+  549  config.alter
+  550  update-alternatives --config java 
+  551  update-alternatives --config javac 
+  552  update-alternatives --config java
+  553  sudo update-alternatives --config java
+  554  sudo update-alternatives --config javac
+  555  ./mvnw -q spring-boot:run -Dserver.port=8081
+  556  vim ~/.m2/
+  557  vim ~/.m2/settings.xml 
+  558  vim ~/.m2/toolchains.xml 
+  559  /usr/bin/java -version
+  560  ll
+  561  vim mvnw
+  562  echo $JAVA_HOME 
+  563  export JAVA_HOME=/usr/bin/java
+  564  echo $JAVA_HOME 
+  565  ./mvnw -q spring-boot:run -Dserver.port=8081
+  566  which /usr/bin/java
+  567  ll /usr/bin/java
+  568  ll /etc/alternatives/java
+  569  which /usr/bin/java
+  570  source ~/.bashrc
+  571  echo $JAVA_HOME 
+  572  export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+  573  ./mvnw -q spring-boot:run -Dserver.port=8081
+  574  npm version
+  575  cd git.angular/
+  576  git clone https://github.com/DeborahK/Angular-GettingStarted.git
+  577  ll
+  578  cd Angular-GettingStarted/
+  579  ll
+  580  cd ..
+  581  git clone https://github.com/angular/angular-cli.git
+  582  ll
+  583  cd angular-
+  584  cd angular-cli/
+  585  ll
+  586  yarn
+  587  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  588  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  589  sudo apt update && sudo apt install yarn
+  590  yarn
+  591  yarn build --local
+  592  curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+  593  sudo apt-get install -y nodejs
+  594  yarn build --local
+  595  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  596  sudo apt-get update && sudo apt-get install yarn
+  597  yarn build --local
+  598  curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+  599  sudo apt-get install -y nodejs
+  600  sudo apt-get purge -y nodejs
+  601  sudo apt-get install -y nodejs
+  602  yarn build --local
+  603  npm -v
+  604  npm install
+  605  npm start
+  606  cd Programme/pdfedit-0.4.5/
+  607  ll
+  608  ./configure 
+  609  make 
+  610  make install
+  611  ./configure 
+  612  npm install bootstrap
+  613  npm install font-awesome
+  614  cd InnSideDemoStorage/
+  615  ll
+  616  cd delete/
+  617  ll
+  618  cd channel_0/
+  619  l
+  620  +less channel_0_1.dat 
+  621  less channel_0_1.dat 
+  622  sudo npm install -g @angular/cli@7.3.6
+  623  mkdir git.angular.electron
+  624  cd git.angular.electron/
+  625  ng new ImageBrowser --routing --style=css
+  626  ll
+  627  cd ImageBrowser/
+  628  ll
+  629  less README.md 
+  630  git init
+  631  ll
+  632  gl
+  633  git log
+  634  git status
+  635  npm install --save electron@4.1.0
+  636  git status
+  637  git log
+  638  git status
+  639  ll
+  640  vim .gitignore 
+  641  cd node_modules/
+  642  ll
+  643  cd ..
+  644  ng generate service images
+  645  git status
+  646  vim src/app/images.service.ts 
+  647  ll
+  648  vim src/app/images.service.ts 
+  649  cd git.angular.electron/
+  650  ll
+  651  cd ImageBrowser/
+  652  ls
+  653  ll
+  654  ng generate component browser
+  655  npm run electron
+  656  cd ..
+  657  git clone https://github.com/oktadeveloper/okta-angular-electron-example.git
+  658  cd okta-angular-electron-example/
+  659  ll
+  660  npm instal
+  661  npm install
+  662  npm audit fix
+  663  npm audit
+  664  npm audit fix --force
+  665  npm run electron
+  666  npm 
+  667  npm version
+  668  cd ..
+  669  cd ImageBrowser/
+  670  npm run electron
+  671  cd git.angular.electron/
+  672  ll
+  673  cd ImageBrowser/
+  674  ll
+  675  npm install --save electron@4.1.0
+  676  npm audit fix
+  677  cd ..
+  678  cd okta-angular-electron-example/
+  679  npm run electron
+  680  npm install -g @angular/cli@7.3.6
+  681  npm install --save electron@4.1.0
+  682  npm run electron
+  683  npm install
+  684  npm run electron
+  685  npm install
+  686  npm fund
+  687  npm install
+  688  ng update --all
+  689  sudo ng update --all
+  690  ng update @angular/cli
+  691  sudo ng update --all
+  692  git status
+  693  git add .
+  694  git commit -m "Updated myself"
+  695  git add .
+  696  sudo ng update --all
+  697  sudo ng update 
+  698  ng update @angular/core
+  699  sudo ng update 
+  700  sudo ng update --all
+  701  npm install
+  702  npm run electron
+  703  npm install electron --save-dev
+  704  npm run electron
+  705  ng serve
+  706  npm install
+  707  npm run electron
+  708  ll
+  709  cd 
+  710  ll
+  711  cd git.angular.electron/
+  712  ll
+  713  cd AngularElectron/
+  714  ll
+  715  npm run electron
+  716  cd ../ImageBrowser/
+  717  ll
+  718  cd src/
+  719  cd ..
+  720  mv angular.json.bak angular.json
+  721  ng run electron
+  722  npm run electron
+  723  ll
+  724  cd ..
+  725  ll
+  726  rm -rf node_modules/
+  727  ll
+  728  rm package-lock.json 
+  729  ll
+  730  rm -rf okta-angular-electron-example/
+  731  ll
+  732  git clone https://github.com/oktadeveloper/okta-angular-electron-example.git
+  733  ll
+  734  cd okta-angular-electron-example/
+  735  npm run electron
+  736  cd ..
+  737  ll
+  738  rm -rf ImageBrowser/
+  739  ng new ImageBrowser --routing --style=css
+  740  rm -rf okta-angular-electron-example/
+  741  ll
+  742  ng new ImageBrowser --routing --style=css
+  743  ng
+  744  cd ..
+  745  ll
+  746  cd git.angular.electron/
+  747  ll
+  748  npm run electron
+  749  npm run start:electron
+  750  npm run electron
+  751  npm run electron
+  752  npm install electron --save-dev
+  753  npm audit fix
+  754  npm run electron
+  755  cd git.angular.electron/
+  756  ll
+  757  rm -rf AngularElectron/
+  758  ng new AngularElectron
+  759  npm install electron --save-dev
+  760  cd AngularElectron/
+  761  npm install electron --save-dev
+  762  ll
+  763  cd ..
+  764  ll
+  765  rm -rf okta-angular-electron-example/
+  766  ll
+  767  ng new ImageBrowser --routing --style=css
+  768  ll
+  769  cd ImageBrowser/
+  770  ng serve
+  771  npm install --save-dev electron@latest
+  772  1
+  773  ng generate service images
+  774  ng generate component browser
+  775  cd ..
+  776  git clone https://github.com/oktadeveloper/okta-angular-electron-example.git
+  777  ll
+  778  cd ImageBrowser/
+  779  npm run electron
+  780  node -v
+  781  npm -v
+  782  cd ..
+  783  npm init
+  784  ll
+  785  mkdir electron-app
+  786  mv package.json electron-app/
+  787  cd electron-app/
+  788  ll
+  789  less package.json 
+  790  vim package.json 
+  791  npm install --save-dev electron
+  792  ll
+  793  less package
+  794  less package.json 
+  795  vim package.json 
+  796  vim main.js
+  797  ll
+  798  vim main.js
+  799  vim index.html
+  800  npm start
+  801  vim index.html
+  802  cd ..
+  803  ll
+  804  mkdir multi-window-electron-desktop-app
+  805  cd multi-window-electron-desktop-app/
+  806  ll
+  807  npm i electron-prebuilt --save.dev
+  808  ll
+  809  npm i electron-prebuilt --save-dev
+  810  ll
+  811  vim package-lock.json 
+  812  ll
+  813  tree node_modules/
+  814  ll
+  815  ll node_modules/
+  816  npm init
+  817  ll
+  818  vim package.json 
+  819  vim app.js
+  820  vim main.html
+  821  npm start
+  822  npm i app-module-path
+  823  npm start
+  824  npm install
+  825  npm start
+  826  npm run start
+  827  npm start
+  828  ll
+  829  npm start
+  830  cd ~/Dokumente/Bewerbungen_Detlef/2019/01_2020_HaCon_Java-Entwickler\ \(mwd\)\ Backend/
+  831  ll
+  832  pdftk A=CV_dboehm_german.pdf B= Certificates_dboehm.pdf cat A1-end-1 B1-end output zusammen_neu.pdf compress
+  833  pdftk A=CV_dboehm_german.pdf B=Certificates_dboehm.pdf cat A1-end-1 B1-end output zusammen_neu.pdf compress
+  834  pdftk A=CV_dboehm_german.pdf B=Certificates_dboehm.pdf cat A1-end B1-end output zusammen_neu.pdf compress
+  835  pdftk A=CV_dboehm_german.pdf B=Certificates_dboehm.pdf cat A1-8 B1-end output zusammen_neu.pdf compress
+  836  cd ..
+  837  git --version
+  838  npm --version
+  839  node --version
+  840  wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+  841  ll
+  842  ionic serve
+  843  nvm
+  844  nvm install lts/*
+  845  nvm list
+  846  nvm alias default lts/*
+  847  nvm list
+  848  nvm ls
+  849  nvm ls-remote 
+  850  git --version
+  851  ionic
+  852  npm install -g ionic
+  853  ionic
+  854  cd git.angular.electron/
+  855  ll
+  856  cd multi-window-electron-desktop-app/
+  857  npm start
+  858  cd ..
+  859  ll
+  860  cd ..
+  861  mkdir git
+  862  mkdir git.ionic.electron
+  863  cd git.ionic.electron/
+  864  ll
+  865  unzip building-cross-platform-apps-ionic-electron.zip 
+  866  ll
+  867  mkdir building-cross-platform-apps-ionic-electron
+  868  mv building-cross-platform-apps-ionic-electron.zip building-cross-platform-apps-ionic-electron
+  869  ll
+  870  rm -rf 02/
+  871  rm -rf 03/
+  872  rm -rf 04
+  873  rm -rf 05
+  874  rm -rf 06
+  875  rm -rf 07
+  876  ll
+  877  cd building-cross-platform-apps-ionic-electron/
+  878  ll
+  879  unzip building-cross-platform-apps-ionic-electron.zip 
+  880  ll
+  881  cd 02/
+  882  ll
+  883  ionice 
+  884  ionic
+  885  source ~/.bashrc
+  886  ionic
+  887  cd ..
+  888  ll
+  889  ionic start
+  890  ionic serve
+  891  cd pinpoint/
+  892  ionic serve
+  893  code .
+  894  ng generate interface address
+  895  npm i -S @agm/core
+  896  ionic serve
+  897  cd git.ionic.electron/
+  898  ll
+  899  cd building-cross-platform-apps-ionic-electron/
+  900  ll
+  901  cd pinpoint/
+  902  ll
+  903  ionic serve
+  904  code .
+  905  npm update
+  906  npm install -g npm
+  907  npm update
+  908  ionic serve
+  909  cd git.ionic.electron/
+  910  ll
+  911  cd building-cross-platform-apps-ionic-electron/
+  912  ll
+  913  cd pinpoint/
+  914  code .
+  915  npm install -D @types/googlemaps
+  916  npm audit fix
+  917  touch src/app/index.d.ts
+  918  ionic serve
+  919  ng generate service maps  --skip-tests=true
+  920  ionic serve
+  921  npm install -D @types/googlemaps
+  922  ionic serve
+  923  npm install  @ionic/storage
+  924  npm install  uuid
+  925  npm audit fix
+  926  ng generate service storage
+  927  ionic serve
+  928  cd git.ionic.electron/building-cross-platform-apps-ionic-electron/pinpoint/
+  929  ll
+  930  code .
+  931  cd ~
+  932  ll
+  933  cd Hadis/
+  934  ll
+  935  pdftk A=Scan_pc07000.pdf cat A1 output Praktikumsbescheinigung.pdf
+  936  pdftk A=Scan_pc07000.pdf cat A2-end output BfAbescheinigung.pdf
+  937  pdftk A=Scan_pc07002_page1.pdf B=Scan_pc07002_page2.pdf cat A1 B1 output Zabihi_Ausweis.pdf
+  938  ll
+  939  ionic serve
+  940  ionic integrations enable capacitor
+  941  npx cap init pinpoint de.jamsintown.pinpoint
+  942  ionic build
+  943  npx cap add electron
+  944  git 
+  945  npx cap open electron
+  946  cd electron/
+  947  ll
+  948  npm i -D electron@latest
+  949  cd ..
+  950  npm run build
+  951  history
+  952  npx cap open electron
+  953  cd electron/
+  954  npm start
+  955  cd ..
+  956  npm start
+  957  cd electron/
+  958  npm start
+  959  cd ..
+  960  ll
+  961  npm start
+  962  npx cap open electron
+  963  npm run build
+  964  npm start
+  965  ionic integrations enable capacitor
+  966  npx cap init pinpoint de.jamsintown.pinpoint
+  967  npx cap add electron
+  968  npx cap open electron
+  969  npm i -D electron@latest
+  970  npm run build
+  971  npm start
+  972  npx cap open electron
+  973  npm run build
+  974  npx cap open electron
+  975  npm start
+  976  npx cap open electron
+  977  npm start
+  978  npx cap open electron
+  979  npm start
+  980  npm install ngx-electron
+  981  npm start
+  982  npm install ngx-electron
+  983  npm audit fix
+  984  npm start
+  985  npm install ngx-electron --save
+  986  npm start
+  987  ng generate servcice Dispatcher --skipTests
+  988  ng generate service Dispatcher --skipTests
+  989  npm start
+  990  ng serve
+  991  npm start
+  992  ng serve
+  993  npm run build
+  994  npm start
+  995  ng serve
+  996  npm start
+  997  npm run build
+  998  npm start
+  999  git status
+ 1000  npm start
+ 1001  history 
+ 1002  history > history.txt
